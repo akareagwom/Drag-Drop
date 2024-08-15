@@ -2,6 +2,11 @@
 import React, { useState } from 'react';
 import Draggable from 'react-draggable';
 import { Resizable } from 'react-resizable';
+import { Panel, PanelGroup } from "react-resizable-panels";
+
+
+
+// import ResizeHandle from "./ResizeHandle";
 
 const Cards = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,8 +41,8 @@ const Cards = () => {
   };
 
   return (
-    <div>
-      <button onClick={openModal}>Add new card</button>
+    <div >
+      <button className='bg-red-400 p-2 rounded' onClick={openModal}>Add new card</button>
       {isOpen && (
         <div className="flex p-2 flex-col w-[400px] rounded h-[30vh] text-black bg-red-400">
           <textarea
@@ -60,22 +65,30 @@ const Cards = () => {
             <Resizable>
                 
 
-          <div>
+          <div className='fixed inset-0 z-50 flex items-center justify-center opacity-30 '>
             {cards.map((card, index) => (
-              <div key={index}>
-                {card.slice(0, 10)} more...
+              <div className="relative w-[100%]  h-full" key={index}>
+                 <p>{card.slice(0, 10)}</p>
                 <button onClick={() => openTextModal(card)}>Show More</button>
               </div>
             ))}
             {openText && (
-                <div className='bg-[rgba(215,238,248,255)] rounded w-[500px]'>
+                <div  style={{
+                    width: '200px',
+                    height: '150px',
+                    padding: '10px',
+                    border: '1px solid #ddd',
+                    resize: 'both',
+                    overflow: 'auto',
+                  }} className='bg-[rgba(215,238,248,255)] absolute rounded w-[500px]'>
                 <p>{selectedCard}</p>
-                <button onClick={closeTextModal}>Close</button>
+                <button className='bg-red-400 p-2 rounded' onClick={closeTextModal}>Close</button>
                 </div>
             )}
           </div>
             </Resizable>
         </Draggable>
+              {/* <ResizeHandle /> */}
       </div>
     </div>
   );
