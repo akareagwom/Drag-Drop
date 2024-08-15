@@ -15,13 +15,25 @@ const Cards = () => {
     const closeModal =()=>{
         setIsOpen(false);
     }
+
+    const handleAddText = () => {
+        if (text.trim()) {
+          setCards([...cards, text]);
+          setModalText('');
+          closeModal();
+        }
+      };
   return (
     <div>
         <button onClick={openModal}>add new card</button>
         {isOpen && 
-        <div className=' flex p-2 flex-col w-[400px] rounded h-[30vh] text-white bg-red-400'>
-          {modaLText}
+        <div className=' flex p-2 flex-col w-[400px] rounded h-[30vh] text-black bg-red-400'>
+          
+            <textarea/>
           <button className='bg-white mt-12 w-[100px] ml-[70%] text-black rounded p-2' onClick={closeModal}>close</button>
+            <button onClick={handleAddText} style={{ marginRight: '10px' }}>
+              Add
+            </button>
         </div>
         }
         <div>
