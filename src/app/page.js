@@ -4,9 +4,9 @@ import Canvas from "./components/Canvas";
 
 export default function Home() {
   return (
-    <>
-    <Cards/>
+    <div className="w-full overflow-none">
+      <Cards/>
     {/* <Canvas/> */}
-    </>
+    </div>
   );
 }

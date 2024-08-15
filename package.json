@@ -16,7 +16,8 @@
     "react-draggable": "^4.4.6",
     "react-flow-renderer": "^10.3.17",
     "react-modal": "^3.16.1",
-    "react-resizable": "^3.0.5"
+    "react-resizable": "^3.0.5",
+    "react-resizable-panels": "^2.0.23"
   },
   "devDependencies": {
     "postcss": "^8.4.41",

@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Draggable from 'react-draggable';
+import { Resizable } from 'react-resizable';
 
 const Cards = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +57,9 @@ const Cards = () => {
       )}
       <div>
         <Draggable>
+            <Resizable>
+                
+
           <div>
             {cards.map((card, index) => (
               <div key={index}>
@@ -64,12 +68,13 @@ const Cards = () => {
               </div>
             ))}
             {openText && (
-                <div>
+                <div className='bg-[rgba(215,238,248,255)] rounded w-[500px]'>
                 <p>{selectedCard}</p>
                 <button onClick={closeTextModal}>Close</button>
                 </div>
             )}
           </div>
+            </Resizable>
         </Draggable>
       </div>
     </div>
