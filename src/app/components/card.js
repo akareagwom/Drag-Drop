@@ -70,6 +70,7 @@ const Cards = () => {
               <div className="relative w-[100%]  h-full" key={index}>
                  <p>{card.slice(0, 10)}</p>
                 <button onClick={() => openTextModal(card)}>Show More</button>
+                hola por favor
               </div>
             ))}
             {openText && (
