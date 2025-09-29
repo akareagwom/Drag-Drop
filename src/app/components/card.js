@@ -15,6 +15,9 @@ const Cards = () => {
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState('');
 
+
+  //modal
+
   const openModal = () => {
     setIsOpen(true);
   };
